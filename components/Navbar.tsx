@@ -20,9 +20,11 @@ export function Navbar({ page, setPage }: NavbarProps) {
     setOpen(false);
     switch(item) {
       case "Dashboard":
+      case "Comments":
         setPage("dashboard");
         break;
       case "Rekts":
+      case "🔥 Rekts":
         setPage("rekts");
         break;
       case "Features":
@@ -31,6 +33,8 @@ export function Navbar({ page, setPage }: NavbarProps) {
         setTimeout(() => {
           document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: 'smooth' });
         }, 100);
+        break;
+      default:
         break;
     }
   };
@@ -93,39 +97,109 @@ export function Navbar({ page, setPage }: NavbarProps) {
         </div>
         
         <div style={{ display:"flex", gap:10, alignItems:"center" }}>
-        
+          <button className="btn-ghost" style={{ padding:"8px 18px", fontSize:14 }}>Login</button>
           <button className="btn-primary" style={{ padding:"8px 18px", fontSize:14 }} onClick={() => setPage("dashboard")}>Start Free</button>
-          <button style={{ display:"none", background:"none", border:"none", color:"var(--text)", cursor:"pointer" }} onClick={() => setOpen(!open)} id="mob-menu-btn">
+          {/* Mobile menu button - always visible on mobile */}
+          <button 
+            style={{ 
+              display:"none", 
+              background:"none", 
+              border:"none", 
+              color:"var(--text)", 
+              cursor:"pointer",
+              padding: 8,
+              WebkitTapHighlightColor: "transparent",
+              touchAction: "manipulation",
+            }} 
+            onClick={() => setOpen(!open)} 
+            id="mob-menu-btn"
+          >
             {open ? <Icons.X /> : <Icons.Menu />}
           </button>
         </div>
       </div>
       
+      {/* Mobile menu */}
       {open && (
-        <div style={{ background:"var(--surface)", borderBottom:"1px solid var(--border)", padding:"16px 24px", display:"flex", flexDirection:"column", gap:16 }}>
-          {["Features","Pricing","Comments","🔥 Rekts"].map(item => (
-            <button 
-              key={item} 
-              onClick={() => handleNavClick(item === "Comments" ? "Dashboard" : item)}
-              style={{ 
-                background:"none", 
-                border:"none", 
-                color: item === "🔥 Rekts" && page === "rekts" ? "#fca5a5" : "var(--text)", 
-                fontSize:16, 
-                textAlign:"left", 
-                cursor:"pointer", 
-                padding:"4px 0",
-                fontWeight: item === "🔥 Rekts" ? 600 : 400
-              }}
-            >
-              {item}
-            </button>
-          ))}
+        <div style={{ 
+          background:"var(--surface)", 
+          borderBottom:"1px solid var(--border)", 
+          padding:"16px 24px", 
+          display:"flex", 
+          flexDirection:"column", 
+          gap:16 
+        }}>
+          <button 
+            onClick={() => handleNavClick("Features")}
+            style={{ 
+              background:"none", 
+              border:"none", 
+              color:"var(--text)", 
+              fontSize:16, 
+              textAlign:"left", 
+              cursor:"pointer", 
+              padding:"8px 0",
+              WebkitTapHighlightColor: "transparent",
+              touchAction: "manipulation",
+            }}
+          >
+            Features
+          </button>
+          <button 
+            onClick={() => handleNavClick("Pricing")}
+            style={{ 
+              background:"none", 
+              border:"none", 
+              color:"var(--text)", 
+              fontSize:16, 
+              textAlign:"left", 
+              cursor:"pointer", 
+              padding:"8px 0",
+              WebkitTapHighlightColor: "transparent",
+              touchAction: "manipulation",
+            }}
+          >
+            Pricing
+          </button>
+          <button 
+            onClick={() => handleNavClick("Comments")}
+            style={{ 
+              background:"none", 
+              border:"none", 
+              color: page === "dashboard" ? "#a78bfa" : "var(--text)", 
+              fontSize:16, 
+              textAlign:"left", 
+              cursor:"pointer", 
+              padding:"8px 0",
+              fontWeight: page === "dashboard" ? 600 : 400,
+              WebkitTapHighlightColor: "transparent",
+              touchAction: "manipulation",
+            }}
+          >
+            💬 Comments
+          </button>
+          <button 
+            onClick={() => handleNavClick("🔥 Rekts")}
+            style={{ 
+              background:"none", 
+              border:"none", 
+              color: page === "rekts" ? "#fca5a5" : "var(--text)", 
+              fontSize:16, 
+              textAlign:"left", 
+              cursor:"pointer", 
+              padding:"8px 0",
+              fontWeight: page === "rekts" ? 600 : 400,
+              WebkitTapHighlightColor: "transparent",
+              touchAction: "manipulation",
+            }}
+          >
+            🔥 Rekts
+          </button>
         </div>
       )}
       
       <style>{`
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
           .nav-desktop { display:none !important; }
           #mob-menu-btn { display:block !important; }
         }
