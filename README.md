@@ -88,3 +88,26 @@ echo "GROQ_API_KEY=your_key_here" > .env.local
 
 # Start development server
 npm run dev
+
+
+
+
+📊 Tech Stack
+Technology	Purpose
+Next.js 14	Framework & API routes
+TypeScript	Type safety
+Groq API	AI text generation
+Mixtral 8x7B	Language model
+Framer Motion	Animations
+Vercel	Hosting & deployment
+CSS-in-JS	Styling (no extra deps)
+📄 License
+MIT License - feel free to use this project however you want!
+
+Copyright (c) 2025 CWcata
+
+👨‍💻 Author
+Cata (CWcata)
+
+https://img.shields.io/badge/GitHub-CodeWithCata-181717?style=for-the-badge&logo=github
+https://img.shields.io/badge/Twitter-@yourhandle-1DA1F2?style=for-the-badge&logo=twitter
