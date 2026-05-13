@@ -1,36 +1,90 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔥 CommentFuel
 
-## Getting Started
+<div align="center">
 
-First, run the development server:
+**AI-powered comment & roast generator for TikTok, Instagram, and YouTube**
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)](LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue)](https://www.typescriptlang.org/)
+[![Groq](https://img.shields.io/badge/AI-Groq-orange)](https://groq.com/)
+[![Vercel](https://img.shields.io/badge/Vercel-Deployed-black)](https://commentfuel.vercel.app)
+
+[🚀 Live Demo](https://commentfuel.vercel.app) · [🐛 Report Bug](https://github.com/CodeWithCata/CommentFuel/issues) · [💡 Request Feature](https://github.com/CodeWithCata/CommentFuel/issues)
+
+</div>
+
+---
+
+## 📖 About The Project
+
+CommentFuel is a free, open-source tool that helps content creators generate viral comments and savage roasts using AI. Whether you're trying to boost engagement on your posts or destroy someone in the comments section, CommentFuel has you covered.
+
+### Why CommentFuel?
+- 🎯 **Save Time** - Generate engaging comments in seconds, not minutes
+- 🧠 **AI-Powered** - Uses Groq's Mixtral 8x7B model for human-like responses
+- 🌍 **Multilingual** - Supports 12 languages with local slang
+- 💸 **100% Free** - No hidden costs, no premium tiers, just free AI
+- 🔓 **Open Source** - MIT licensed, use it however you want
+
+---
+
+## ✨ Features
+
+### 💬 Smart Comment Generator
+- Generate platform-specific comments for TikTok, Instagram & YouTube
+- 7 different tones: Funny, Savage, Gen Z, NPC, Flirty, Viral, Smart
+- Real-time AI generation using Groq's LLM
+- One-click copy to clipboard
+- Regenerate for fresh, unique results every time
+- Smart fallback samples when API rate limits are reached
+
+### 🔥 Rekts Roaster
+- Generate savage roasts in 12 languages
+- Language-specific slang and cultural references
+- 7 roast styles: Savage, Witty, Gen Z, Comeback King, NPC Roast, Viral Roast, Intellectual Burn
+- Platform-optimized roasts (TikTok, Instagram, YouTube)
+- Auto-detects input language for better results
+
+### 🎨 UI/UX
+- Dark mode with purple/red accent colors
+- Smooth animations using Framer Motion
+- Fully responsive design (mobile, tablet, desktop)
+- Clean, intuitive interface
+- Lightning-fast performance
+
+---
+
+## 🚀 Quick Deploy (Vercel)
+
+The easiest way to get your own copy running:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/CodeWithCata/CommentFuel&env=GROQ_API_KEY)
+
+1. Click the button above
+2. Add your `GROQ_API_KEY` (get free key at [console.groq.com](https://console.groq.com))
+3. Deploy and start using!
+
+---
+
+## 🛠️ Local Installation
+
+### Prerequisites
+- Node.js 18+ ([Download](https://nodejs.org/))
+- npm or yarn
+- Free Groq API key ([Get it here](https://console.groq.com))
+
+### Setup Commands
 ```bash
+# Clone the repository
+git clone https://github.com/CodeWithCata/CommentFuel.git
+cd CommentFuel
+
+# Install dependencies
+npm install
+
+# Create environment file
+echo "GROQ_API_KEY=your_key_here" > .env.local
+
+# Start development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
